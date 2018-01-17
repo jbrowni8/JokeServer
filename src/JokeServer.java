@@ -10,6 +10,9 @@ public static void main(String[] args) throws IOException {
 		int port = 56000;
 		Socket sock;
 
+		JokeClientAdmin adminLooper = new JokeClientAdmin();
+		Thread t = new Thread(adminLooper);
+		t.start();
 		//Starting a new socket at port 56000
 		@SuppressWarnings("resource")
 		ServerSocket servsock = new ServerSocket(port, q_length);
